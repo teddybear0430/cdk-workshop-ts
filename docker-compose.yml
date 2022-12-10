@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  cdk_workshop_ts_app:
+    container_name: cdk_workshop_ts_app
+    build: .
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+    tty: true
+    volumes:
+      - ./app:/app
